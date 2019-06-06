@@ -1648,7 +1648,7 @@ var DropzoneArea = function (_Component) {
                     }
                     _this2.setState({
                         openSnackBar: true,
-                        snackbarMessage: 'File ' + file.name + ' removed',
+                        snackbarMessage: 'Archivo ' + file.name + ' eliminado. ',
                         snackbarVariant: 'info'
                     });
                 });
@@ -1698,7 +1698,7 @@ var DropzoneArea = function (_Component) {
             if (this.state.fileObjects.length + files.length > this.props.filesLimit) {
                 this.setState({
                     openSnackBar: true,
-                    snackbarMessage: 'Maximum allowed number of files exceeded. Only ' + this.props.filesLimit + ' allowed',
+                    snackbarMessage: 'Exedi\xF3 el n\xFAmero m\xE1ximo de archivos permitidos. S\xF3lo se permite ' + this.props.filesLimit,
                     snackbarVariant: 'error'
                 });
             } else {
@@ -1718,7 +1718,7 @@ var DropzoneArea = function (_Component) {
                             if (_this3.props.onDrop) {
                                 _this3.props.onDrop(file);
                             }
-                            message += 'File ' + file.name + ' successfully added. ';
+                            message += 'Archivo ' + file.name + ' a\xF1adido con \xE9xito. ';
                             count++; // we cannot rely on the index because this is asynchronous
                             if (count === files.length) {
                                 // display message when the last one fires
@@ -1741,12 +1741,12 @@ var DropzoneArea = function (_Component) {
 
             var message = '';
             rejectedFiles.forEach(function (rejectedFile) {
-                message = 'File ' + rejectedFile.name + ' was rejected. ';
+                message = 'Archivo ' + rejectedFile.name + ' fue rechazado. ';
                 if (!_this4.props.acceptedFiles.includes(rejectedFile.type)) {
-                    message += 'File type not supported. ';
+                    message += 'Tipo de archivo no soportado. ';
                 }
                 if (rejectedFile.size > _this4.props.maxFileSize) {
-                    message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(_this4.props.maxFileSize) + '. ';
+                    message += 'El archivo es muy grande. Límite de tamaño es ' + convertBytesToMbsOrKbs(_this4.props.maxFileSize) + '. ';
                 }
             });
             if (this.props.onDropRejected) {
@@ -1804,7 +1804,7 @@ var DropzoneArea = function (_Component) {
                         React__default.createElement(
                             'span',
                             null,
-                            'Preview:'
+                            'Previsualizar:'
                         )
                     ),
                     React__default.createElement(PreviewList$1, {

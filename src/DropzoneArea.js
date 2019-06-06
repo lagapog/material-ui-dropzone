@@ -81,7 +81,7 @@ class DropzoneArea extends Component{
         if(this.state.fileObjects.length + files.length > this.props.filesLimit){
             this.setState({
                 openSnackBar: true,
-                snackbarMessage: `Maximum allowed number of files exceeded. Only ${this.props.filesLimit} allowed`, 
+                snackbarMessage: `Exedió el número máximo de archivos permitidos. Sólo se permite ${this.props.filesLimit}`, 
                 snackbarVariant: 'error'
             });
         }else{
@@ -99,7 +99,7 @@ class DropzoneArea extends Component{
                         if(this.props.onDrop){
                             this.props.onDrop(file)
                         }
-                        message += `File ${file.name} successfully added. `;
+                        message += `Archivo ${file.name} añadido con éxito. `;
                         count++; // we cannot rely on the index because this is asynchronous
                         if(count === files.length){
                             // display message when the last one fires
@@ -129,7 +129,7 @@ class DropzoneArea extends Component{
             }
             this.setState({
                 openSnackBar: true,
-                snackbarMessage: ('File ' + file.name+ ' removed'),
+                snackbarMessage: (`Archivo ${file.name} eliminado. `),
                 snackbarVariant: 'info'
             });
         });
@@ -137,12 +137,12 @@ class DropzoneArea extends Component{
     handleDropRejected(rejectedFiles, evt) {
         var message = '';
         rejectedFiles.forEach((rejectedFile) => {
-            message = `File ${rejectedFile.name} was rejected. `;
+            message = `Archivo ${rejectedFile.name} fue rechazado. `;
             if(!this.props.acceptedFiles.includes(rejectedFile.type)){
-                message += 'File type not supported. '
+                message += 'Tipo de archivo no soportado. '
             }
             if(rejectedFile.size > this.props.maxFileSize){
-                message += 'File is too big. Size limit is ' + convertBytesToMbsOrKbs(this.props.maxFileSize) + '. ';
+                message += 'El archivo es muy grande. Límite de tamaño es ' + convertBytesToMbsOrKbs(this.props.maxFileSize) + '. ';
             }
         });
         if(this.props.onDropRejected){
@@ -191,7 +191,7 @@ class DropzoneArea extends Component{
                 {showPreviews &&
                     <Fragment>
                         <Grid container>
-                            <span>Preview:</span>
+                            <span>Previsualizar:</span>
                         </Grid>
                         <PreviewList 
                             fileObjects={this.state.fileObjects} 

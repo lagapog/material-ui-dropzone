@@ -1973,7 +1973,9 @@ var DropzoneDialog = function (_React$Component) {
                     Dialog,
                     {
                         open: this.state.open,
-                        onClose: this.handleClose.bind(this)
+                        onClose: this.handleClose.bind(this),
+                        maxWidth: 'sm',
+                        fullWidth: true
                     },
                     React.createElement(
                         DialogTitle,

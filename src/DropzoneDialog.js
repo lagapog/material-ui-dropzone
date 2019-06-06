@@ -88,6 +88,8 @@ class DropzoneDialog extends React.Component {
                 <Dialog
                     open={this.state.open}
                     onClose={this.handleClose.bind(this)}
+                    maxWidth={'sm'}
+                    fullWidth
                 >
                     <DialogTitle>{this.props.dialogTitle}</DialogTitle>
                     <DialogContent>

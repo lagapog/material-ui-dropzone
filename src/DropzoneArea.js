@@ -22,23 +22,19 @@ const styles = {
      position: 'relative',
      width: '100%',
      minHeight: '250px',
-     backgroundColor: '#F0F0F0',
+     background: '#F0F0F0',
      border: 'dashed',
      borderColor: '#C8C8C8',
      cursor: 'pointer',
      boxSizing: 'border-box',
+     transition: 'border .2s'
    },
    stripes: {
-     border: 'solid',
-     backgroundImage: 'repeating-linear-gradient(-45deg, #F0F0F0, #F0F0F0 25px, #C8C8C8 25px, #C8C8C8 50px)',
-     animation: 'progress 2s linear infinite !important',
-     backgroundSize: '150% 100%',
+     borderStyle: 'solid',
    },
    rejectStripes: {
-     border: 'solid',
-     backgroundImage: 'repeating-linear-gradient(-45deg, #fc8785, #fc8785 25px, #f4231f 25px, #f4231f 50px)',
-     animation: 'progress 2s linear infinite !important',
-     backgroundSize: '150% 100%',
+     borderStyle: 'solid',
+     borderColor: '#fc8785'
    },
     dropzoneTextStyle:{
         textAlign: 'center'

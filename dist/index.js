@@ -1768,7 +1768,6 @@ var DropzoneArea = function (_Component) {
             var classes = this.props.classes;
 
             var showPreviews = this.props.showPreviews && this.state.fileObjects.length > 0;
-            console.log(showPreviews);
             var showPreviewsInDropzone = this.props.showPreviewsInDropzone && this.state.fileObjects.length > 0;
             return React__default.createElement(
                 React.Fragment,
@@ -1845,7 +1844,7 @@ DropzoneArea.defaultProps = {
     acceptedFiles: ['image/*', 'video/*', 'application/*'],
     filesLimit: 3,
     maxFileSize: 3000000,
-    dropzoneText: 'Draaaag and drop an image file here or click',
+    dropzoneText: 'Drag and drop an image file here or click',
     showPreviews: false, // By default previews show up under in the dialog and inside in the standalone
     showPreviewsInDropzone: true,
     showFileNamesInPreview: false,
@@ -2017,7 +2016,7 @@ var DropzoneDialog = function (_React$Component) {
                                 color: 'primary',
                                 onClick: this.handleClose.bind(this)
                             },
-                            'Cancel'
+                            this.props.cancelButtonLabel
                         ),
                         React__default.createElement(
                             Button,
@@ -2026,7 +2025,7 @@ var DropzoneDialog = function (_React$Component) {
                                 disabled: this.state.disabled,
                                 onClick: this.handleSaveClick.bind(this)
                             },
-                            'Submit'
+                            this.props.submitButtonLabel
                         )
                     )
                 )
@@ -2047,6 +2046,8 @@ DropzoneDialog.defaultProps = {
     showAlerts: true,
     clearOnUnmount: true,
     dialogTitle: "Upload file",
+    cancelButtonLabel: "Cancel",
+    submitButtonLabel: "Submit",
     onSave: function onSave() {},
     onDelete: function onDelete() {},
     onClose: function onClose() {},
@@ -2070,7 +2071,9 @@ DropzoneDialog.propTypes = {
     showFileNamesInPreview: PropTypes.bool,
     showAlerts: PropTypes.bool,
     clearOnUnmount: PropTypes.bool,
-    dialogTitle: PropTypes.string
+    dialogTitle: PropTypes.string,
+    cancelButtonLabel: PropTypes.string,
+    submitButtonLabel: PropTypes.string
 };
 
 exports.DropzoneArea = DropzoneArea$1;

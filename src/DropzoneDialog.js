@@ -113,14 +113,14 @@ class DropzoneDialog extends React.Component {
                             color="primary"
                             onClick={this.handleClose.bind(this)}
                             >
-                            Cancel
+                            {this.props.cancelButtonLabel}
                         </Button>
                         <Button
                             color="primary"
                             disabled={this.state.disabled}
                             onClick={this.handleSaveClick.bind(this)}
                             >
-                            Submit
+                            {this.props.submitButtonLabel}
                         </Button>
                     </DialogActions>
                 </Dialog>
@@ -139,6 +139,8 @@ DropzoneDialog.defaultProps = {
     showAlerts: true,
     clearOnUnmount: true,
     dialogTitle: "Upload file",
+    cancelButtonLabel: "Cancel",
+    submitButtonLabel: "Submit",
     onSave:() => {},
     onDelete:() => {},
     onClose:() => {},
@@ -162,7 +164,9 @@ DropzoneDialog.propTypes = {
     showFileNamesInPreview: PropTypes.bool,
     showAlerts: PropTypes.bool,
     clearOnUnmount: PropTypes.bool,
-    dialogTitle: PropTypes.string
+    dialogTitle: PropTypes.string,
+    cancelButtonLabel: PropTypes.string,
+    submitButtonLabel: PropTypes.string
 }
 
 export default DropzoneDialog;

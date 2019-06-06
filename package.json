@@ -1,6 +1,6 @@
 {
   "name": "custom-dropzone",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "dist/index.js",
   "description": "Custom dropzone based on material-ui-dropzone",
   "module": "dist/index.es.js",
